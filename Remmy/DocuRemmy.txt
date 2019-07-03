@@ -1,1 +1,10 @@
 http://www.sce.carleton.ca/netmanage/simulator/rmi/RMIExplanation.htm
+
+RMI Basics Standford 
+http://infolab.stanford.edu/CHAIMS/Doc/Details/Protocols/rmi/rmi_description.html
+
+Developers 
+https://www.developer.com/java/other/article.php/3455311/Understanding-Java-RMI-Internals.htm
+
+Oracle
+https://docs.oracle.com/javase/7/docs/technotes/guides/rmi/hello/hello-world.html
