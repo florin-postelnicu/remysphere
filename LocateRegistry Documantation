@@ -1,0 +1,96 @@
+java.lang.Object
+   |
+   +----java.rmi.registry.LocateRegistry
+   
+public final class LocateRegistry extends Object
+
+This class is used to obtain the bootstrap Registry on a particular host (including your local host).
+
+The following example demonstrates usage (minus exception handling): 
+
+Server wishes to make itself available to others: 
+
+SomeService service = ...; // remote object for service 
+
+Registry registry = LocateRegistry.getRegistry(); 
+
+registry.bind("I Serve", service); 
+
+The client wishes to make requests of the above service: 
+
+Registry registry = LocateRegistry.getRegistry("foo.services.com"); 
+
+SomeService service = (SomeService)registry.lookup("I Serve"); 
+
+service.requestService(...);
+
+
+Method Index
+
+ createRegistry(int)
+ 
+Create and export a registry on the local host.
+
+ getRegistry()
+ 
+Returns the remote object Registry for the local host.
+
+ getRegistry(int)
+ 
+Returns the remote object Registry on the current host at the specified port.
+
+ getRegistry(String)
+ 
+Returns the remote object Registry on the specified host at a default (i.e., well-known) port number.
+
+ getRegistry(String, int)
+ 
+Returns the remote object Registry on the specified host at the specified port.
+
+
+ Methods
+ 
+getRegistry
+
+ public static Registry getRegistry() throws RemoteException
+ 
+Returns the remote object Registry for the local host.
+
+ getRegistry
+ 
+ public static Registry getRegistry(int port) throws RemoteException
+ 
+Returns the remote object Registry on the current host at the specified port.
+
+ getRegistry
+ 
+ public static Registry getRegistry(String host) throws RemoteException, UnknownHostException
+ 
+Returns the remote object Registry on the specified host at a default (i.e., well-known) port number. 
+
+If the host String reference is null, the local host is used.
+
+ getRegistry
+ 
+ public static Registry getRegistry(String host, int port) throws RemoteException, UnknownHostException
+ 
+Returns the remote object Registry on the specified host at the specified port. 
+
+If port <= 0, the default Registry port number is used. If the host String reference is null, the local host is used.
+
+Throws: UnknownHostException
+
+If the host is not known.
+
+createRegistry
+
+ public static Registry createRegistry(int port) throws RemoteException
+ 
+Create and export a registry on the local host.
+
+Parameters:
+port - the port on which the registry is to be exported
+
+Throws: RemoteException
+
+If failure occurs during remote object creation.
