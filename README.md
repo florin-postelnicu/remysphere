@@ -1,4 +1,14 @@
+
+
+
 Package	Description
+
+
+https://docs.oracle.com/en/java/javase/12/docs/api/allpackages-index.html
+
+
+
+
 com.sun.jarsigner	
 This package comprises the interfaces and classes used to define the signing mechanism used by the jarsigner tool.
 com.sun.java.accessibility.util	
