@@ -1,0 +1,106 @@
+Class java.rmi.Naming
+java.lang.Object
+   |
+   +----java.rmi.Naming
+public final class Naming
+extends Object
+This is the bootstrap mechanism for obtaining references to remote objects based on Uniform Resource Locator (URL) syntax. 
+The URL for a remote object is specified using the usual host, port and name: 
+rmi://host:port/name 
+host = host name of registry (defaults to current host) 
+port = port number of registry (defaults to the registry port number) 
+name = name for remote object
+ Method Index
+ 
+ bind(String, Remote)
+ 
+Binds the name to the specified remote object.
+
+list(String)
+
+Returns an array of strings of the URLs in the registry.
+
+ lookup(String)
+ 
+Returns the remote object for the URL.
+
+rebind(String, Remote)
+
+Rebind the name to a new object; replaces any existing binding.
+
+ unbind(String)
+ 
+Unbind the name.
+
+
+ Methods
+ 
+ lookup
+ 
+ public static Remote lookup(String name) throws NotBoundException, MalformedURLException, UnknownHostException,
+ RemoteException
+ 
+Returns the remote object for the URL.
+
+Throws: RemoteException
+
+If registry could not be contacted.
+
+Throws: NotBoundException
+
+If name is not currently bound.
+
+
+ bind
+ 
+ public static void bind(String name,
+                         Remote obj) throws AlreadyBoundException, MalformedURLException, UnknownHostException, 
+                         RemoteException
+                         
+Binds the name to the specified remote object.
+
+Throws: RemoteException
+
+If registry could not be contacted.
+
+Throws: AlreadyBoundException
+
+If name is already bound.
+
+
+ unbind
+ 
+ public static void unbind(String name) throws RemoteException, NotBoundException, MalformedURLException,
+ UnknownHostException
+ 
+Unbind the name.
+
+Throws: RemoteException
+
+If registry could not be contacted.
+
+Throws: NotBoundException
+
+If name is not currently bound.
+
+
+ rebind
+ 
+ public static void rebind(String name,
+                           Remote obj) throws RemoteException, MalformedURLException, UnknownHostException
+                           
+Rebind the name to a new object; replaces any existing binding.
+
+Throws: RemoteException
+
+If registry could not be contacted.
+
+
+ list
+ public static String[] list(String name) throws RemoteException, MalformedURLException, UnknownHostException
+ 
+Returns an array of strings of the URLs in the registry. The array contains a snapshot of the names present in the registry.
+
+Throws: RemoteException
+
+If registry could not be contacted.
